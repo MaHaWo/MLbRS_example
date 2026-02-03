@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
     # train model
     training_loss, model = train_model(config, training_dataset, model)
-    f1 = mlbrs.evaluation.evaluate_f1_score(
+    _, _, _, _, _, f1 = mlbrs.evaluation.evaluate_f1_score(
         model,
         test_dataset,
         batch_size=config["training"].get("batch_size", 32),
