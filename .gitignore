@@ -212,9 +212,11 @@ __marimo__/
 # ignore data
 data
 
-# ignore results
-results
+# ignore results contents, but keep .yaml and .json files
+results/**
+!results/**/
+!results/**/*.yaml
+!results/**/*.json
 
 # but don´t ignore dvc
 !*.dvc
-

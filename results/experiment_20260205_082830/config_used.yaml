@@ -1,0 +1,43 @@
+model:
+  conv1_args:
+  - 1
+  - 32
+  - 3
+  - 1
+  conv2_args:
+  - 32
+  - 64
+  - 3
+  - 1
+  dropout_rate1: 0.25
+  dropout_rate2: 0.5
+  fc1_args:
+  - 9216
+  - 128
+  fc2_args:
+  - 128
+  - 10
+test_dataset:
+  download: true
+  root: ./data
+  size: 120
+  target_dataset: MNIST
+  train: false
+  transform:
+  - ToTensor
+training:
+  batch_size: 32
+  device: cuda
+  epochs: 3
+  learning_rate: 0.005
+  split_ratio:
+  - 0.8
+  - 0.2
+training_dataset:
+  download: true
+  root: ./data
+  size: 600
+  target_dataset: MNIST
+  train: true
+  transform:
+  - ToTensor
